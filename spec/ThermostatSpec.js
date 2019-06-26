@@ -5,7 +5,7 @@ describe('Thermostat', function(){
   beforeEach(function(){
     thermostat = new Thermostat
   })
-  
+
 
   it('Has an initial temperature of 20', () => {
     expect(thermostat.temperature).toEqual(20);
@@ -22,11 +22,25 @@ describe('Thermostat', function(){
   });
 
   it('Minimum temperature is 10 degrees', () => {
-    // for ( let i = 1; i <= 10; i++){
-    //   thermostat.downTemp
-    // }
     thermostat.temperature = 10
-    
+
     expect(function(){thermostat.downTemp()}).toThrow(("Error: Minimum temperature reached"))
   });
+
+  it('Has an initial status of power saving mode: off', () => {
+    expect(thermostat.powerSaving).toEqual('Off');
+  });
+
+  it('It enforces a max temp of 25 degrees when power saving is on', () => {
+    thermostat.switchPowerSaving
+    thermostat.temperature = 25
+    expect(function(){thermostat.upTemp()}).toThrow(("Error: Maximum temperature reached"))
+  });
+
+  it('It enforces a max temp of 32 degrees when power saving is off', () => {
+    thermostat.temperature = 32
+    expect(function(){thermostat.upTemp()}).toThrow(("Error: Maximum temperature reached"))
+  });
+
+
 });
