@@ -34,6 +34,18 @@ Thermostat.prototype.reset = function(){
   this.temperature = 20;
 }
 
+Thermostat.prototype.calculateEnergyUsage = function(){
+  if (this.temperature < 18){
+    this.energyUsage = 'low-usage';
+  }
+  else if (this.temperature < 25){
+    this.energyUsage = 'medium-usage';
+  }
+  else if (this.temperature > 25){
+    this.energyUsage = 'high-usage';
+  }
+}
+
 Thermostat.prototype.minimumLimitError = function(){
   throw "Error: Minimum temperature reached";
 }
