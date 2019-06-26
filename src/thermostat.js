@@ -30,6 +30,10 @@ Thermostat.prototype.downTemp = function(){
   }
 }
 
+Thermostat.prototype.reset = function(){
+  this.temperature = 20;
+}
+
 Thermostat.prototype.minimumLimitError = function(){
   throw "Error: Minimum temperature reached";
 }

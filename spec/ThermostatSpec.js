@@ -42,5 +42,9 @@ describe('Thermostat', function(){
     expect(function(){thermostat.upTemp()}).toThrow(("Error: Maximum temperature reached"))
   });
 
-
+  it('Has a reset function which sets temperature to 20', () => {
+    thermostat.temperature = 25
+    thermostat.reset()
+    expect(thermostat.temperature).toEqual(20);
+  });
 });
