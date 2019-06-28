@@ -1,62 +1,32 @@
 <!doctype html>
 <html>
   <head>
-  <style>
-    body {
-      background-color: powderblue;
-    }
-  </style>
+    <link rel="stylesheet" href="styles.css">
     <title>
       Thermostat
     </title>
     <div align="center">
-      <h1>
-        Thermostat
-      </h1>
+      <h1 id="temp"></h1>
     </div>
   </head>
   <body>
-   <a href="http://jquery.com/">Link</a>
-    <script src='thermostat.js'> </script>
-    <script src='js/jquery.min.js'></script>
-
-  <script>
-    window.onload = (function() {
-     alert( "welcome" );
-    };
-  </script>
-
-    // <script>
-    //   $( document ).ready(function() {
-    //     $( "a" ).click(function( event ) {
-    //       alert( "Thanks for visiting" );
-    //     });
-    //   });
-    // </script>
-
-    <div>
-      <p>
-        Current Temperature:
-      </p>
-      <br>
-      <p>
-        Current Energy Usage:
-      </p>
-      <br>
-        Power Saving is:
+    <div align="center">
+      <br> 
+      <p> Power saving is: </p>
+      <p id="power-saving">ON</p>
     </div>
     <br>
     <br>
-    <div align="center" id>
-      <button onclick=" " id="a">Increase Temperature</button>
-      <br>
-      <br>
-      <button onclick=" ">Decrease Temperature</button>
-      <br>
-      <br>
-      <button onclick=" ">Reset</button>
-      <button onclick=" ">Power Save</button>
+    <div align="center" id="my-sexy-div">
+      <button id="temp-up">+</button>
+      <button id="temp-down">-</button>
+      <button id="temp-reset">Reset</button>
+      <button id="psm-on">Power Save ON</button>
+      <button id="psm-off">Power Save OFF</button>
     </div>
+
+    <script src="js/thermostat.js"> </script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/interface.js"></script>
   </body>
-
 </html>
